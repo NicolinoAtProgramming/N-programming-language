@@ -1,0 +1,48 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>N</title>
+        <style>
+            body {margin: 0;}
+            #code {resize: none; z-index: 1000; caret-color: black; color: transparent; background-color: transparent;}
+            #code, #highlightCode {
+                resize: none;
+                left: 0;
+                font-size: 15px;
+                font-family: calibri;
+                width: 50%;
+                outline: 0;
+                padding: 0;
+                height: 100%;
+                overflow: auto;
+                text-overflow: clip;
+                text-wrap: nowrap;
+            }
+            #highlightCode {background-color: #454545;}
+            #con {right: 0; background-color: #393939; overflow: auto;}
+            .panel {position: fixed; top: 50px; border: 1px solid black; border-radius: 5px;}
+            button {background-color: blue; border-radius: 10px; padding: 15px; color: white; cursor: pointer; border: 1px solid black;}
+            button:hover {background-color: rgb(0, 0, 197);}
+            button:active {background-color: rgb(0, 0, 127);}
+            .x_middle {position: absolute; left: 50%; transform: translate(-50%);}
+            .msg {padding: 10px; color: white; border: 1px solid white; border-radius: 5px;}
+            .error {background-color: #ff000080;}
+            .keyword {color: #000077; font-weight: bolder;}
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <button onclick="run();" class="x_middle">Run</button>
+            <textarea spellcheck="false" class="panel" id="code"></textarea>
+            <div id="highlightCode" class="panel">
+            </div>
+            <div class="panel" id="con"></div>
+        </div>
+        <script src="ast.js"></script>
+        <script src="NLexer.js"></script>
+        <script src="NParser.js"></script>
+        <script src="NSecondParser.js"></script>
+        <script src="NInterpreter.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
